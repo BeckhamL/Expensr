@@ -6,6 +6,8 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="script.js"></script>
+	<!-- Importing D3 -->
+	<script src="https://d3js.org/d3.v4.min.js"></script>
 
 	<!-- GeoComplete-->
 	<script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
@@ -18,7 +20,6 @@
 <body>
 
 	<div class="header">
-    	<div class="container clearfix">
         	<h1 id="logo"> Expensr </h1>
     	</div>
 	</div>
@@ -28,17 +29,12 @@
 	<div class="wrapper" ng-app="myApp" ng-controller="controller">
 		
 	<h1 class="message2" id="message2"> <input type="text" ng-model="yourName" placeHolder="Name" class="input1"> {{yourName}} </h1>
-		
-	</div>
-
-	<pre id="logger">Log:</pre>
-	<script>
 	
-			$('.input1').geocomplete()
-			.bind("geocode:result", function(event, result){
-            $.log(result.formatted_address);
-         	});
+	</div>
+	<script>
+	//svg();
 
 	</script>
+	
 </body>
 </html>

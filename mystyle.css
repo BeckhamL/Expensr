@@ -21,16 +21,9 @@ body {
     color: white;
     font-weight: 400;
 }
-.header.smaller {
-    height: 75px;
-}
-.header.smaller h1#logo {
-    width: 150px;
-    height: 75px;
-    font-size: 30px;
-}
-.header.smaller nav a {
-    line-height: 75px;
+.header.tiny {
+  height:40px;
+  background: #aaa;
 }
 .message1 {
     margin-top: 150px;
@@ -60,23 +53,3 @@ body {
     border-radius: 4px;
 
 }
-/*
-.column-left{ 
-	float: left; 
-	width: 33%; 
-	background: #105ec9;
-	margin-top: 117px;
-	 }
-.column-right{ 
-	float: right; 
-	width: 33%; 
-	background: #27b9ce; 
-	margin-top: 117px;
-}
-.column-center{ 
-	display: inline-block; 
-	width: 33%; 
-	margin-top: 117px;
-	background: #4a90f0;
-}
-*/
