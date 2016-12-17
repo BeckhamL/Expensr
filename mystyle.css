@@ -25,23 +25,23 @@ body {
   height:40px;
   background: #aaa;
 }
-.message1 {
+.firstTitle {
     margin-top: 150px;
     font-size: 55px;
     text-align: center;
     font-family: 'Fjalla One', sans-serif;
-
+		
 }
-.message2 {
+.message1 {
 	margin-top: 8px;
 	text-align: center;
 	font-size: 40px;
 	font-family: 'Fjalla One', sans-serif;
 }
-.wrapper{ 
-    position: absolute; 
-    left: 575px; 
-    top: 10px; 
+.wrapper{
+    position: absolute;
+    left: 575px;
+    top: 10px;
 }
 .input1 {
     margin-top: 245px;
