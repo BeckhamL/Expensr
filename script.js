@@ -21,13 +21,17 @@ $(document).ready(function() {
 });
 
 <!--angular-->
+
 angular.module('myApp', [])
 	.controller('controller', function($scope) {
     $scope.yourName;
-
 });
 
-
+angular.module('count', [])
+	.controller('countdown',function($scope) {
+	$scope.myValue = "80";
+});
+	
 <!-- D3 -->
 
 function start(){
