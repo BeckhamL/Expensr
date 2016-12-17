@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>Expensr</title>
+
+	<!--importing jQuery and Angular-->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+
+	<!-- GeoComplete-->
+	<script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+	<script src="jquery.geocomplete.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+	<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+</head>
+<body>
+
+	<div class="header">
+    	<div class="container clearfix">
+        	<h1 id="logo"> Expensr </h1>
+    	</div>
+	</div>
+
+	<h1 class="message1">Search a location:</h1>
+
+	<div class="wrapper" ng-app="myApp" ng-controller="controller">
+		
+	<h1 class="message2" id="message2"> <input type="text" ng-model="yourName" placeHolder="Name" class="input1"> {{yourName}} </h1>
+		
+	</div>
+
+	<pre id="logger">Log:</pre>
+	<script>
+	
+			$('.input1').geocomplete()
+			.bind("geocode:result", function(event, result){
+            $.log(result.formatted_address);
+         	});
+
+	</script>
+</body>
+</html>
