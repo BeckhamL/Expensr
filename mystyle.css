@@ -30,13 +30,18 @@ body {
     font-size: 55px;
     text-align: center;
     font-family: 'Fjalla One', sans-serif;
-		
+
 }
 .message1 {
 	margin-top: 8px;
 	text-align: center;
 	font-size: 40px;
 	font-family: 'Fjalla One', sans-serif;
+}
+
+.message2{
+	margin-left: 2px;
+	text-align: left;
 }
 .wrapper{
     position: absolute;

@@ -20,10 +20,14 @@ var app1 = angular.module('myApp', []);
 
 app1.controller('controller', function($scope) {
     $scope.yourName;
-    $scope.first = 1;
-    $scope.second = 3;
 
-    $scope.keypress = function() {
-        $scope.enter = $scope.first + ' + ' + $scope.second + ' = ' + (+$scope.first + $scope.second);
+    $scope.keypress = function($event) {
+
+      $scope.first = 1;
+        var keyCode = $event.which || $event.keyCode;
+        if (keyCode == 13){
+          return $scope.first;
+        }
     };
+
 });
