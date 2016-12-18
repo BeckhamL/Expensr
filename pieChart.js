@@ -3,7 +3,7 @@ function male2female() {
     var data = [10, 80];
 
     var color = d3.scaleOrdinal()
-        .range(['#ff99e6', '#33ccff']);
+        .range(['#ffff00', '#00ff00']);
 
     var canvas = d3.select('#canvas').append('svg')
         .attr('width', 1200)

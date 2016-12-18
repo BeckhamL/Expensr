@@ -9,14 +9,14 @@ body {
     top: 0;
     left: 0;
     z-index: 999;
-    background:  #663399;
+    background:  #006622;
 }
 .header h1#logo {
     display: inline=block;
     height: 150px;
     float: left;
     margin-left:50px;
-    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Kaushan Script', cursive;
     font-size: 60px;
     color: white;
     font-weight: 400;
