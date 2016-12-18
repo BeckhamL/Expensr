@@ -1,18 +1,18 @@
-function male2female() {
+function male1female() {
 
-    var data = [10, 80];
+    var myData = [50, 80, 53, 71, 29];
 
     var color = d3.scaleOrdinal()
-        .range(['#ff99e6', '#33ccff']);
+        .range(['#00cc66', ' #000099','#00ff00', '#00ccff', '#ffff00','#ff0066']);
 
-    var canvas = d3.select('#canvas').append('svg')
+    var canvas = d3.select('#canvas2').append('svg')
         .attr('width', 1200)
         .attr('height', 1200);
 
     //positioning of the SVG
     var group = canvas.append('g')
     //X,Y
-        .attr('transform', 'translate(350, 650)');
+        .attr('transform', 'translate(500, 650)');
 
     var arc = d3.arc()
         .innerRadius(200)
@@ -24,7 +24,7 @@ function male2female() {
         });
 
     var arcs = group.selectAll('.arc')
-        .data(pie(data))
+        .data(pie(myData))
         .enter()
         .append('g')
         .attr('class', 'arc');
