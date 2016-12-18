@@ -12,7 +12,8 @@ function male2female() {
 
     //positioning of the SVG
     var group = canvas.append('g')
-        .attr('transform', 'translate(300, 600)');
+    //X,Y
+        .attr('transform', 'translate(350, 650)');
 
     var arc = d3.arc()
         .innerRadius(200)
@@ -41,6 +42,7 @@ function male2female() {
         })
         .attr('text-anchor', 'middle')
         .attr('font-size', '1.5em')
+        .attr('font-family', 'Fjalla One')
         .text(function(d) {
             return d.data;
         });

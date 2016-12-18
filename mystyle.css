@@ -9,7 +9,7 @@ body {
     top: 0;
     left: 0;
     z-index: 999;
-    background: #FF3399;
+    background:  #663399;
 }
 .header h1#logo {
     display: inline=block;
