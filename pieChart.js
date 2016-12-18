@@ -1,15 +1,47 @@
 function svg() {
 
-    var canvas = d3.select("body")
-        .append('svg')
-        .attr('width', 700)
-        .attr('length', 700)
+    var data = [10, 50, 80];
+    var r = 300;
 
-    var circle = canvas.append("circle")
-      .attr('cx',50)
-      .attr('cy',50)
-      .attr('r',50)
-      .attr('fill','blue')
+    var color = d3.scaleOrdinal()
+        .range(['red', 'blue', 'orange']);
+
+    var canvas = d3.select('#canvas').append('svg')
+        .attr('width', 1500)
+        .attr('height', 1500);
+
+    var group = canvas.append('g')
+        .attr('transform', 'translate(300, 300)');
+
+    var arc = d3.arc()
+        .innerRadius(200)
+        .outerRadius(r);
+
+    var pie = d3.pie()
+        .value(function(d) {
+            return d;
+        });
+
+    var arcs = group.selectAll('.arc')
+        .data(pie(data))
+        .enter()
+        .append('g')
+        .attr('class', 'arc');
+
+    arcs.append('path')
+        .attr('d', arc)
+        .attr('fill', function(d) {
+            return color(d.data);
+        });
+
+    arcs.append('text')
+        .attr('transform', function(d) {
+            return 'translate(' + arc.centroid(d) + ')';
+        })
+        .attr('font-size', '1.5em')
+        .text(function(d) {
+            return d.data;
+        });
 
 
 }
