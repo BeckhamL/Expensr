@@ -1,17 +1,18 @@
-function svg() {
+function male2female() {
 
-    var data = [10, 50, 80];
+    var data = [10, 80];
     var r = 300;
 
     var color = d3.scaleOrdinal()
-        .range(['red', 'blue', 'orange']);
+        .range(['#ff99e6', '#33ccff']);
 
     var canvas = d3.select('#canvas').append('svg')
-        .attr('width', 1500)
-        .attr('height', 1500);
+        .attr('width', 1200)
+        .attr('height', 1200);
 
+    //positioning of the SVG
     var group = canvas.append('g')
-        .attr('transform', 'translate(300, 300)');
+        .attr('transform', 'translate(300, 600)');
 
     var arc = d3.arc()
         .innerRadius(200)
@@ -38,10 +39,9 @@ function svg() {
         .attr('transform', function(d) {
             return 'translate(' + arc.centroid(d) + ')';
         })
+        .attr('text-anchor', 'middle')
         .attr('font-size', '1.5em')
         .text(function(d) {
             return d.data;
         });
-
-
 }
