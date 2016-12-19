@@ -6,8 +6,8 @@ function male2female() {
         .range(['#ffff00', '#00ff00']);
 
     var canvas = d3.select('#canvas').append('svg')
-        .attr('width', 1200)
-        .attr('height', 1200);
+        .attr('width', 800)
+        .attr('height', 800);
 
     //positioning of the SVG
     var group = canvas.append('g')
