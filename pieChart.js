@@ -2,7 +2,7 @@ function male2female() {
 
     var data = [50, 80, 53, 71, 29];
 
-    var color = ['red','blue'];
+    var color = ['#11A325','#64FF33', '#34A311', '#42DC57', '#42DC83'];
 
     var colorscale = d3.scaleLinear().domain([0, data.length]).range(color);
 
@@ -13,7 +13,7 @@ function male2female() {
     //positioning of the SVG
     var group = canvas.append('g')
         //X,Y
-        .attr('transform', 'translate(675, 650)');
+        .attr('transform', 'translate(675, 675)');
 
     var arc = d3.arc()
         .innerRadius(155)
@@ -36,7 +36,7 @@ function male2female() {
 
     arcs.append('path')
         .attr('d', arc)
-        .attr('fill', function(d, i) {
+        .attr('fill', function(d,i) {
             return colorscale(i);
         })
         .on("mouseover", function(d) {
