@@ -5,13 +5,13 @@ function male2female() {
     var precent = 0;
     var precentage = [];
 
-    for (var i = 0; i < data.length; i++){
-      sum += data[i];
+    for (var i = 0; i < data.length; i++) {
+        sum += data[i];
     }
 
-    for (var i = 0; i < data.length; i++){
-      precent = ((data[i]/sum) * 100).toFixed(2);
-      precentage.push(precent);
+    for (var i = 0; i < data.length; i++) {
+        precent = ((data[i] / sum) * 100).toFixed(2);
+        precentage.push(precent);
     }
 
     var color = ['#11A325', '#64FF33', '#34A311', '#42DC57', '#42DC83'];
@@ -67,7 +67,7 @@ function male2female() {
             return 'translate(' + arc.centroid(d) + ')';
         })
         .attr('text-anchor', 'middle')
-        .attr('font-size', '1.5em')
+        .attr('font-size', '1.4em')
         .attr('font-family', 'Fjalla One')
         .text(function(d) {
             return d.data + "%";
