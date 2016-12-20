@@ -1,21 +1,21 @@
 function male2female() {
 
-    var data = [10, 80];
+    var data = [50, 80, 53, 71, 29];
 
     var color = d3.scaleOrdinal()
-        .range(['#ffff00', '#00ff00']);
+        .range(['#00cc66', ' #000099','#00ff00', '#00ccff', '#ffff00','#ff0066']);
 
     var canvas = d3.select('#canvas').append('svg')
-        .attr('width', 800)
-        .attr('height', 800);
+        .attr('width', 1200)
+        .attr('height', 1200);
 
     //positioning of the SVG
     var group = canvas.append('g')
     //X,Y
-        .attr('transform', 'translate(350, 650)');
+        .attr('transform', 'translate(675, 650)');
 
     var arc = d3.arc()
-        .innerRadius(200)
+        .innerRadius(155)
         .outerRadius(300);
 
     var pie = d3.pie()
