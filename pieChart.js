@@ -1,8 +1,20 @@
 function male2female() {
 
-    var data = [50, 80, 53, 71, 29];
+    var data = [65, 44, 12, 41, 18, 7];
+    var sum = 0;
+    var precent = 0;
+    var precentage = [];
 
-    var color = ['#11A325','#64FF33', '#34A311', '#42DC57', '#42DC83'];
+    for (var i = 0; i < data.length; i++){
+      sum += data[i];
+    }
+
+    for (var i = 0; i < data.length; i++){
+      precent = ((data[i]/sum) * 100).toFixed(2);
+      precentage.push(precent);
+    }
+
+    var color = ['#11A325', '#64FF33', '#34A311', '#42DC57', '#42DC83'];
 
     var colorscale = d3.scaleLinear().domain([0, data.length]).range(color);
 
@@ -29,14 +41,14 @@ function male2female() {
         });
 
     var arcs = group.selectAll('.arc')
-        .data(pie(data))
+        .data(pie(precentage))
         .enter()
         .append('g')
         .attr('class', 'arc');
 
     arcs.append('path')
         .attr('d', arc)
-        .attr('fill', function(d,i) {
+        .attr('fill', function(d, i) {
             return colorscale(i);
         })
         .on("mouseover", function(d) {
@@ -58,6 +70,6 @@ function male2female() {
         .attr('font-size', '1.5em')
         .attr('font-family', 'Fjalla One')
         .text(function(d) {
-            return d.data;
+            return d.data + "%";
         });
 }
