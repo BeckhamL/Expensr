@@ -2,8 +2,9 @@ function male2female() {
 
     var data = [50, 80, 53, 71, 29];
 
-    var color = d3.scaleOrdinal()
-        .range(['#00cc66', ' #000099','#00ff00', '#00ccff', '#ffff00','#ff0066']);
+    var color = ['red','blue'];
+
+    var colorscale = d3.scaleLinear().domain([0, data.length]).range(color);
 
     var canvas = d3.select('#canvas').append('svg')
         .attr('width', 1200)
@@ -11,12 +12,16 @@ function male2female() {
 
     //positioning of the SVG
     var group = canvas.append('g')
-    //X,Y
+        //X,Y
         .attr('transform', 'translate(675, 650)');
 
     var arc = d3.arc()
         .innerRadius(155)
         .outerRadius(300);
+
+    var arcOver = d3.arc()
+        .innerRadius(155)
+        .outerRadius(300 + 30);
 
     var pie = d3.pie()
         .value(function(d) {
@@ -31,8 +36,18 @@ function male2female() {
 
     arcs.append('path')
         .attr('d', arc)
-        .attr('fill', function(d) {
-            return color(d.data);
+        .attr('fill', function(d, i) {
+            return colorscale(i);
+        })
+        .on("mouseover", function(d) {
+            d3.select(this).transition()
+                .duration(1000)
+                .attr("d", arcOver);
+        })
+        .on("mouseout", function(d) {
+            d3.select(this).transition()
+                .duration(1000)
+                .attr("d", arc);
         });
 
     arcs.append('text')
