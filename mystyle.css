@@ -60,18 +60,3 @@ body {
     border-radius: 4px;
 }
 /* BAR CHART */
-.bar {
-	fill: steelblue;
-}
-.bar:hover{
-	fill: brown;
-}
-.axis {
-	font-family: 'Fjalla One', sans-serif;
-	font-size: 8px;
-}
-.axis path,
-.axis line {
-	fill: none;
-	stroke: #000;
-}
