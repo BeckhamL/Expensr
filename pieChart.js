@@ -46,24 +46,18 @@ function male2female() {
         .append('g')
         .attr('class', 'arc');
 
-    var tip = d3.tip().attr('class', 'd3-tip').html(function(d) {
-        return d;
-    });
-
-    arcs.call(tip);
-
     arcs.append('path')
         .attr('d', arc)
         .attr('fill', function(d, i) {
             return colorscale(i);
         })
-        .on("mouseover", tip.show, function(d) {
+        .on("mouseover", function(d) {
             d3.select(this)
                 .transition()
                 .duration(1000)
                 .attr("d", arcOver);
         })
-        .on("mouseout", tip.hide, function(d) {
+        .on("mouseout", function(d) {
             d3.select(this)
                 .transition()
                 .duration(1000)

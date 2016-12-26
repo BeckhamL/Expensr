@@ -14,7 +14,6 @@ function male1female() {
     var group = canvas.append('g')
     //X,Y
 
-
     var arc = d3.arc()
         .innerRadius(155)
         .outerRadius(300);
