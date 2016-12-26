@@ -11,7 +11,7 @@ function male1female() {
         .attr('height', 1200);
 
     //positioning of the SVG
-    var group = canvas.append('g')
+    var group = canvas.append('b')
     //X,Y
 
     var arc = d3.arc()
@@ -26,7 +26,7 @@ function male1female() {
     var arcs = group.selectAll('.arc')
         .data(pie(myData))
         .enter()
-        .append('g')
+        .append('b')
         .attr('class', 'arc');
 
     arcs.append('path')
